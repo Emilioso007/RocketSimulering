@@ -13,10 +13,14 @@ public class App extends PApplet {
         sm = new ScreenManager(this);
         size(620, 480, P2D);
         smooth(8);
+    }
 
+    public void setup() {
+        frameRate(24);
     }
 
     public void draw() {
         sm.show();
+
     }
 }
