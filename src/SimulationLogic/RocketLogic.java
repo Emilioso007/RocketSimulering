@@ -21,7 +21,7 @@ public class RocketLogic {
   double dm;
   double time;
 
-  public RocketLogic(PApplet p) {
+  RocketLogic(PApplet p) {
     this.p = p;
     ρ = 1.2041;
     v = 0;
@@ -50,11 +50,12 @@ public class RocketLogic {
     v = v + (((-u * dm) - (m * g) - (β * v * Math.abs(v))) / (m)) * t;
     h = h + v * t;
     time = time + t;
+  }
 
-    System.out.println(v);
-    System.out.println(h);
-    System.out.println(time);
-    System.out.println("");
-
+  void textDisplay() {
+    p.textSize(20);
+    p.text("Time: " + time, 10, 30);
+    p.text("Height: " + h, 10, 60);
+    p.text("Velocity: " + v, 10, 90);
   }
 }
